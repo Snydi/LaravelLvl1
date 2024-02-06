@@ -19,11 +19,13 @@ class UserController extends Controller
     }
     public function store(UserStoreRequest $request)
     {
-        return User::storeUser($request);
+        User::storeUser($request);
+        return response()->json(['message' => 'Пользователь успешно добавлен']);
     }
     public function update(UserUpdateRequest $request, $id)
     {
-        return User::updateUser($request,$id);
+        User::updateUser($request,$id);
+        return response()->json(['message' => 'Пользователь успешно обновлен']);
     }
     public function destroy($id)
     {

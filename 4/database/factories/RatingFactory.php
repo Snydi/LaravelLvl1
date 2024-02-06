@@ -23,7 +23,7 @@ class RatingFactory extends Factory
             'rating' => fake()->randomFloat(1,1,5),
             'user_id' => User::pluck('id')->random(),
             'product_id' => Product::pluck('id')->random(),
-            'review_id' => Review::pluck('id')->random(), //TODO нужно чтобы только иногда было
+            'review_id' => Review::pluck('id')->random(),
 
         ];
     }

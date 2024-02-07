@@ -4,31 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AddressStoreRequest;
 use App\Http\Requests\AddressUpdateRequest;
-use App\Models\Address;
-use Illuminate\Http\Request;
+use App\Repositories\AddressRepository;
 
 class AddressController extends Controller
 {
     public function index()
     {
-        return Address::getAllAdresses();
+        return AddressRepository::index();
     }
     public function show($id)
     {
-        return Address::showAdress($id);
+        return AddressRepository::show($id);
     }
     public function store(AddressStoreRequest $request)
     {
-        Address::storeAddress($request);
+        AddressRepository::store($request);
         return response()->json(['message' => 'Адрес успешно добавлен']);
     }
     public function update(AddressUpdateRequest $request, $id)
     {
-        Address::updateAddress($request,$id);
+        AddressRepository::update($request,$id);
         return response()->json(['message' => 'Адрес успешно обновлен']);
     }
-    public function destroy($id): int
+    public function destroy($id)
     {
-        return Address::deleteAddress($id);
+        AddressRepository::destroy($id);
+        return response()->json(['message' => 'Адрес успешно удален']);
     }
 }

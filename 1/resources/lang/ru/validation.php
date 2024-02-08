@@ -11,7 +11,7 @@ return [
     ],
 
     'attributes' => [
-        'email' => 'адрес электронной почты',
+        'mail' => 'адрес электронной почты',
         'first_name' => 'имя',
         'last_name' => 'фамилия',
         'messages_accepted' => 'согласие на рассылку',
